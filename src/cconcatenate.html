@@ -1,0 +1,48 @@
+<html>
+    <head>
+<script>
+function concatenate()
+			{
+				var string = document.getElementById("number").value;
+				var string1 = document.getElementById("number1").value;
+				
+                // var arr = string.split(''); 
+                // var arr1 = string1.split('');
+              
+                var string2="";
+                
+                
+                if(string.length<string1.length){
+                    var len=string1.length;
+                }
+                else{
+                    var len=string.length;
+                }
+                //string=1,2
+                //string1=a,b,c
+                        for(var i=0;i<len;i++){
+                            if(string[i]!==undefined && string1[i]!==undefined){
+                                string2+=string[i]+string1[i];
+                            }
+                            else if(string[i]==undefined){
+                                string2+=string1[i];
+                            }    
+                            else if(string1[i]==undefined){
+                                string2+=string[i];
+                            }
+                            
+                        } 
+                
+                console.log(string2);
+            }
+           
+            </script>
+
+        <body>
+<input type="text" id="number">
+<input type="text" id="number1">
+
+<input type="button"  value="submit"  onclick="concatenate()">
+        </body>
+    </head>
+</html>

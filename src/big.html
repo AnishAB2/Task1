@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script>
+			function validateForm(arg) {
+				var x = arg;
+				var numbers = /^[0-9]+$/;
+				if (x == "") {
+				alert("No values found");
+				return false;
+				}
+				var val = x.split(','); 
+				// debugger;
+				if(val.length===1){
+					alert(" only one value");
+					return false;
+				}
+			}
+			
+			function largest()
+			{
+				var string = document.getElementById("number").value;
+				if (validateForm(string)===false){
+					return;
+				};
+			    var arr = string.split(','); 
+			    console.log(findLargestNum(arr));
+			   
+			}
+			function findLargestNum(arr) {
+             var biggestNum = 0;
+             for (var i = 0; i< arr.length; i++){
+				 var currentvalue =parseInt(arr[i]);
+				 if(!/^[0-9]+$/.test(currentvalue))
+				{
+					alert("Strings are not allowed");
+					return true;
+				}
+				if(currentvalue>biggestNum){
+                biggestNum=currentvalue;
+     			}
+  			}
+    return biggestNum;
+  }
+
+		</script>
+	</head>
+	<body>
+		Name: <input type="text" id="number" name="fname">
+		<input type="button" value="submit"  onclick="largest()">
+	</body>
+</html>
